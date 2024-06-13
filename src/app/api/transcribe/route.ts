@@ -1,19 +1,5 @@
-import multer from "multer";
-import fs from "fs";
-import path from "path";
-import FormData from "form-data";
-import { promisify } from "util";
 import OpenAI from "openai";
 import { NextRequest, NextResponse } from "next/server";
-import { Uploadable } from "openai/src/core.js";
-
-const upload = multer({ dest: "uploads/" });
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
 
 const openai = new OpenAI();
 

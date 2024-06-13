@@ -23,13 +23,13 @@ const UploadPage = () => {
     };
 
     transcribeFile();
-  }, []);
+  }, [audioFile]);
 
   return (
     <Container>
       {transcription ? (
         <div className="my-12">
-          <h2 className="text-3xl font-semibold mb-4">Here's your transcription!</h2>
+          <h2 className="text-3xl font-semibold mb-4">Here&apos;s your transcription!</h2>
           <div className="rounded-lg p-8 bg-gray-100 dark:bg-trueGray-700">
             {transcription}
           </div>

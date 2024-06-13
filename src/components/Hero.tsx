@@ -13,7 +13,7 @@ export const Hero = () => {
   const onDrop = useCallback((acceptedFiles: any[]) => {
     setAudioFile(acceptedFiles[0]);
     router.push("/upload");   
-  }, []);
+  }, [router, setAudioFile]);
 
   return (
     <>
