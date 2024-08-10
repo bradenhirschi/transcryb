@@ -3,17 +3,15 @@
 import { Container } from "@/components/Container";
 import { useCallback } from "react";
 import Dropzone from "react-dropzone";
-import { useAppContext } from "@/app/context";
 import { redirect, useRouter } from "next/navigation";
 
 export const Hero = () => {
   const router = useRouter();
-  const { audioFile, setAudioFile } = useAppContext();
 
   const onDrop = useCallback((acceptedFiles: any[]) => {
-    setAudioFile(acceptedFiles[0]);
-    router.push("/upload");   
-  }, [router, setAudioFile]);
+    // setAudioFile(acceptedFiles[0]);
+    // router.push("/upload");   
+  }, []);
 
   return (
     <>

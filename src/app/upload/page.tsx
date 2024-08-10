@@ -1,29 +1,27 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useAppContext } from "../context";
 import { Container } from "@/components/Container";
 
 const UploadPage = () => {
-  const { audioFile, setAudioFile } = useAppContext();
   const [transcription, setTranscription] = useState<string>();
 
-  useEffect(() => {
-    const transcribeFile = async () => {
-      const formData = new FormData();
-      formData.append("file", audioFile, audioFile.name);
+  // useEffect(() => {
+  //   const transcribeFile = async () => {
+  //     const formData = new FormData();
+  //     formData.append("file", audioFile, audioFile.name);
 
-        const response = await fetch("/api/transcribe", {
-          method: "POST",
-          body: formData,
-        });
+  //       const response = await fetch("/api/transcribe", {
+  //         method: "POST",
+  //         body: formData,
+  //       });
 
-        const data = await response.json();
-        setTranscription(data.transcription.text);
-    };
+  //       const data = await response.json();
+  //       setTranscription(data.transcription.text);
+  //   };
 
-    transcribeFile();
-  }, [audioFile]);
+  //   transcribeFile();
+  // }, [audioFile]);
 
   return (
     <Container>
